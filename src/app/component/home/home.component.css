@@ -1,0 +1,53 @@
+.toptoolbar{
+    background-color: #3f51b5; 
+    position: sticky; 
+    top: 0;z-index: 1000;
+    margin-top: -8px;
+    margin-left: -8px;
+}
+
+.searchbar{
+    background-color: #3f51b5; 
+}
+
+.toolitems{
+    color: white;
+}
+
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+.sidenav
+{
+ margin-top: 81px;
+}
+
+.sidenavitem{
+    color: royalblue;
+}
+
+search-Box{
+    height: 39px;
+    width: 639px;
+    margin-left: 53px;
+    margin-right: 181px;
+}
+
+input[type=text] {
+    height: 39px;
+    width: 639px;
+    margin-left: 53px;
+    margin-right: 181px;
+    border-bottom-left-radius: 27px;
+    border-bottom-right-radius: 27px;
+    border-bottom-style: hidden;
+    border-top-left-radius: 27px;
+    border-top-right-radius: 27px;
+}
+
+  

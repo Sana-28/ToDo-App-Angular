@@ -1,0 +1,36 @@
+
+<div class="class-container" fxLayoutAlign="center center">
+    <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="1000px" fxLayoutGap="10px">
+        <div *ngFor="let note of notes | noteFilter: {isPin:false,inTrash:true,isArchive:false}" class={{noteView}}>
+     
+           <mat-card style="margin-top: 100px;margin-right: 20px;">
+  
+                  <mat-card-header>
+                    <div [innerHTML]="note.title"></div>
+                  </mat-card-header>
+            
+                  <mat-card-subtitle>
+                    <div [innerHTML]="note.description"></div>
+                  </mat-card-subtitle>
+        
+                  <div>
+                    <button mat-icon-button [matMenuTriggerFor]="menu">
+                      <mat-icon>more_vert</mat-icon>
+                    </button>
+            
+                    <mat-menu #menu="matMenu">
+                        <button  type="submit" mat-menu-item (click)="deleteForever(note)">
+                          <mat-icon>delete_forever</mat-icon> 
+                          <span>Delete Forever</span>
+                        </button>
+                  
+                        <button type="submit" mat-menu-item (click)="restore(note)">
+                            <mat-icon>restore_page</mat-icon>
+                          <span>Restore</span>
+                        </button>
+                      </mat-menu>
+                  </div>
+           </mat-card>
+        </div>
+    </div>
+  </div>

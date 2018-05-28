@@ -1,0 +1,134 @@
+<div class="class-container" fxLayoutAlign="center center">
+  <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px"  class="mat-div">
+         <div *ngFor="let note of notes | noteFilter: {isPin:false,inTrash:false,isArchive:true}" class={{noteView}}>
+            <app-notedisplay [note]="note"></app-notedisplay>
+         </div>
+  </div>
+</div>
+
+<!-- <div class="class-container" fxLayoutAlign="center center">
+  <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="1000px" fxLayoutGap="30px">
+    <div *ngFor="let note of notes">
+      <div *ngIf="note.isArchive===true">
+        <mat-card style="width: max-content;margin-top: 100px;">
+
+          <mat-card-header>
+            <div [innerHTML]="note.title"></div>
+          </mat-card-header>
+
+          <mat-card-subtitle>
+            <div [innerHTML]="note.description"></div>
+          </mat-card-subtitle>
+
+          <div fxLayout="row wrap"> -->
+
+            <!-- Reminder Div -->
+            <!-- <div>
+              <button mat-icon-button [matMenuTriggerFor]="remind">
+                <img src="/assets/icons/reminder.svg">
+              </button>
+
+              <mat-menu #remind="matMenu">
+                <div>
+                  <button type="submit" mat-menu-item>
+                    <b>Reminder:</b>
+                  </button>
+                </div>
+
+                <button type="submit" mat-menu-item>
+                  <div *ngFor="let note of notes">
+                    <div style="user-select: none;text-align: left;" (click)="saveReminder(note,'today')">
+                      <span> Later today &nbsp;&nbsp;&nbsp;</span>
+                      <span> 8:00 PM</span>
+                    </div>
+                  </div>
+                </button>
+
+                <button type="submit" mat-menu-item (click)="saveReminder(note,'tomorrow')">
+                  <div style="user-select: none;text-align: left;">
+                    <span>Tomorrow &nbsp;&nbsp;</span>
+                    <span> &nbsp;&nbsp; 8:00 PM</span>
+                  </div>
+                </button>
+
+                <button type="submit" mat-menu-item (click)="saveReminder(note,'nextWeek')">
+                  <div style="user-select: none;text-align: left;">
+                    <span>Next week &nbsp;&nbsp;</span>
+                    <span> &nbsp;&nbsp; Mon,8:00 AM</span>
+                  </div>
+                </button>
+
+                <div>
+                  <button mat-button [mat-menu-trigger-for]="calender">
+                    <mat-icon>schedule</mat-icon>
+                    <span>Pick date and time</span>
+                  </button>
+                </div>
+                <mat-menu #calender="matMenu">
+                  <button mat-menu-item (click)="saveReminder(note,'pickDate')">
+                    <mat-form-field>
+                      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                  </button>
+
+                </mat-menu>
+
+                <button type="submit" mat-menu-item>
+                  <mat-icon>room</mat-icon>
+                  <span>Pick place</span>
+                </button>
+              </mat-menu>
+            </div> -->
+
+            <!-- Color Div -->
+            <!-- <div>
+              <button mat-icon-button [matMenuTriggerFor]="color">
+                <mat-icon>color_lens</mat-icon>
+            
+              </button>
+
+              <mat-menu #color="matMenu">
+                <div>
+                  <a *ngFor="let color of colors">
+                    <img src="{{color.path}}" (click)="note.color=color.color;updateNotes(note,'true','color')">
+                  </a>
+                </div>
+              </mat-menu>
+            </div> -->
+
+            <!-- Unachive Div -->
+            <!-- <div>
+              <button mat-icon-button type="submit" (click)="unArchive(note)">
+                <mat-icon>unarchive</mat-icon>
+              </button>
+            </div> -->
+
+
+            <!-- Delete Div -->
+            <!-- <div>
+              <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+
+              <mat-menu #menu="matMenu">
+                <button type="submit" mat-menu-item (click)="updateNotes(note,'true','trash')">
+                  <mat-icon>delete</mat-icon>
+                  <span>Delete note</span>
+                </button>
+
+                <button type="submit" mat-menu-item (click)="addLabel()">
+                  <mat-icon>label</mat-icon>
+                  <span>Add Label</span>
+                </button>
+              </mat-menu>
+            </div>
+          </div>
+          
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div> -->
+

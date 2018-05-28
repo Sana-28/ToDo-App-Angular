@@ -1,0 +1,54 @@
+<div>
+    <mat-toolbar class="toptoolbar">
+        <h3 style="text-align:left; color: #ececf8">
+            <i>Fundoo Notes</i>
+        </h3>
+
+        <div fxLayoutAlign="center center">
+            <mat-card style="margin-left: 223px; margin-top: 559px; width: 499px;">
+               
+                <h5 style="text-align:center; color: blue">
+                    <i>User Registration</i>
+                </h5>
+
+                <form style="text-align:center" #registrationFrom="ngForm" (ngSubmit)="register()">
+
+                    <div class="registercontainer">
+                        <mat-form-field class="mat-field">
+                            <input matInput placeholder="name" name="name" type="text" [formControl]="nameControl" [(ngModel)]="model.name">
+                            <mat-error *ngIf="nameControl.hasError('required')">Name is required</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="registercontainer">
+                        <mat-form-field class="mat-field">
+                            <input matInput placeholder="email" name="email" type="email" [formControl]="emailControl" [(ngModel)]="model.email">
+                            <mat-error *ngIf="emailControl.hasError('required')">Email Address is required</mat-error>
+                            <mat-error *ngIf="emailControl.hasError('pattern') && !emailControl.hasError('required') ">Enter Valid Email address</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="registercontainer">
+                        <mat-form-field class="mat-field">
+                            <input matInput placeholder="password" name="password" type="password" [formControl]="passwordControl" [(ngModel)]="model.password">
+                            <mat-error *ngIf="passwordControl.hasError('required')">Password is required</mat-error>
+                            <mat-error *ngIf="passwordControl.hasError('pattern') && !passwordControl.hasError('required') ">Enter a valid Password</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="registercontainer">
+                        <mat-form-field class="mat-field">
+                            <input matInput placeholder="mobile number" name="mobileNo" type="tel" [formControl]="mobileControl" [(ngModel)]="model.mobileNo">
+                            <mat-error *ngIf="mobileControl.hasError('required')">Mobile number required</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="button-row">
+                            <!-- [disabled]="nameControl.invalid || mobileControl.invalid || emailControl.invalid || passwordControl.invalid" -->
+                        <button mat-button color="primary" type="submit">Register</button>
+                    </div>
+                </form>
+            </mat-card>
+        </div>
+    </mat-toolbar>
+</div>

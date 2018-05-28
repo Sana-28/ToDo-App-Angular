@@ -1,0 +1,15 @@
+/* .register-button-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+} */
+
+.toptoolbar{
+  background-color: #3f51b5; 
+  position: sticky; 
+  top: 0;z-index: 1000;
+}
+
+.mat-field{
+  width: 500px;
+}

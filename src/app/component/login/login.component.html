@@ -1,0 +1,51 @@
+<div>
+    <mat-toolbar class="toptoolbar">
+        <h3 style="text-align:left; color: #ececf8">
+            <i>Fundoo Notes</i>
+        </h3>
+
+        <div fxLayoutAlign="center center">
+
+            <mat-card class="loginCard">
+                <!--  <mat-card style="margin:100px;width:500px;margin-top: 100%;"> -->
+                <h5 style="text-align:center; color: #223fe2">
+                    <i>User Login</i>
+                </h5>
+
+                <form style="text-align:center" #loginForm="ngForm" (ngSubmit)="login()">
+
+                    <div class="logincontainer">
+                        <mat-form-field  class="mat-field">
+                            <input matInput placeholder="Email" type="email" name="email"  [formControl]="emailControl" [errorStateMatcher]="match" [(ngModel)]="model.email" required>
+                            <mat-error *ngIf="emailControl.hasError('pattern') && !emailControl.hasError('required') ">Enter Valid Email address</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="logincontainer">
+                        <mat-form-field  class="mat-field">
+                            <input matInput placeholder="Password" type="password" name="password"  [formControl]="emailControl"  [errorStateMatcher]="match" [(ngModel)]="model.password" required>
+                            <mat-error *ngIf="passwordControl.hasError('password') && !passwordControl.hasError('required')">Password is required</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="logincontainer" style="text-align:left;">
+                        <a href="/forgetpassword">forgot password?</a>
+                    </div>
+
+                    <br>
+
+                    <div class="logincontainer" style="text-align:left;">
+                        <a href="/register">register</a>
+                    </div>
+
+                    <div class="button-row">
+                            <!-- [disabled]="emailControl.invalid || passwordControl.invalid" -->
+                        <button mat-button color="primary">
+                            <a href="/home"></a>Login</button>
+                    </div>
+                </form>
+
+            </mat-card>
+        </div>
+    </mat-toolbar>
+</div>

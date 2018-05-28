@@ -1,0 +1,29 @@
+.image{
+    margin-top: -23px;
+    max-width: 326px;
+    min-width: 350px;
+    margin-left: -24px;
+}
+
+.icon{
+    margin-left: 242px;
+    margin-top: -10px;
+     color:#3f51b5;
+     user-select: none;
+}
+
+.btn-update{
+    margin-left: 234px;
+    margin-top: 20px;
+    color:#3f51b5;
+}
+
+[contentEditable=true]:empty:before{
+    content:attr(data-text)
+  }
+  .editable {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  outline: none;
+  line-height: 20px; 
+  } 

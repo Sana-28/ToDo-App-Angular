@@ -1,0 +1,165 @@
+<div>
+  <mat-toolbar appToolbar class="toptoolbar">
+
+    <div class="toolitems">
+      <button mat-icon-button (click)="sidenav.toggle()" href="#" name="Main menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <div class="toolitems">
+      <span> Fundoo Notes </span>
+    </div>
+
+    <!-- <mat-toolbar class="searchbar">
+        <div class="toolitems">
+          <button mat-icon-button (click)="search()">
+            <mat-icon>search</mat-icon>
+          </button>
+        </div>
+      </mat-toolbar>  
+    [attr.disabled]="disabled ? '' : null"-->
+
+      <form [formGroup]="searchForm">
+            <input type='text' placeholder="Search" [formControl]="inputFormControl">
+     </form> 
+
+    <div class="toolitems">
+      <button mat-icon-button (click)="refresh()">
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </div>
+
+    <div class="toolitems">
+      <button mat-icon-button (click)="viewlist()">
+        <mat-icon>view_list</mat-icon>
+      </button>
+    </div>
+
+    <div class="toolitems">
+      <button mat-icon-button (click)="apps()">
+        <mat-icon>apps</mat-icon>
+      </button>
+    </div>
+
+    <div class="toolitems">
+      <button mat-icon-button (click)="notify()">
+        <mat-icon>notifications_none</mat-icon>
+      </button>
+    </div>
+
+    <!-- <div class="toolitems">
+      <button mat-icon-button (click)="logout()">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+    </div> -->
+
+    <div>
+      <button mat-mini-fab [matMenuTriggerFor]="appMenu" style="background-color: #3f51b5;">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+   </div>
+  </mat-toolbar>
+
+  <mat-menu #appMenu="matMenu">
+    <div fxLayout="row">
+            <mat-icon>account_circle</mat-icon>
+    </div>
+   
+    <button mat-raised-button>Add account</button>
+    <button mat-raised-button (click)="logout()">Sign out</button>
+ </mat-menu> 
+
+  <mat-sidenav-container fxFlexFill class="example-container">
+    <mat-sidenav mode="side" #sidenav opened fxLayout="column" class="sidenav">
+
+      <div>
+        <div class="sidenavitem">
+          <a routerLink="/home/createnotes" routerLinkActive="active" mat-button>
+            <mat-icon>lightbulb_outline</mat-icon>  Note</a>
+        </div>
+
+      </div>
+
+      <div>
+        <div class="sidenavitem">
+          <a routerLink="/home/trash" routerLinkActive="active" mat-button>
+            <mat-icon>delete</mat-icon>  Trash</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="sidenavitem">
+          <a routerLink="/home/archive" routerLinkActive="active" mat-button>
+            <mat-icon>assignment_returned</mat-icon>  Archive</a>
+        </div>
+      </div>
+
+     <div>
+          <div class="sidenavitem">
+            <a routerLink="/home/reminder" routerLinkActive="active" mat-button>
+            
+              <img src="/assets/icons/reminder.svg" class="sidenavitem" >  Reminders</a>
+          </div>
+    </div>
+
+    <!-- <div>
+        <div class="sidenavitem"> &nbsp;Labels
+            <button mat-button [matMenuTriggerFor]="label">Edit</button>
+        </div>
+    </div> -->
+
+    <div>
+        <button mat-menu-item style="color:royalblue">
+          Labels
+          <button style="color:royalblue" (click)="OpenLabelUpdateDialog(label)">EDIT
+          </button>
+
+        </button>
+    </div>
+    
+      <div *ngFor="let labelObj of labels;">
+          <div class="toolitems">
+            <button [routerLink]="['/home/labelnote/', labelObj.labelId]" mat-menu-item style="color:royalblue">
+              <mat-icon style="color:royalblue">label</mat-icon>
+              <span>{{labelObj.labelTitle}}</span>
+              <!-- <div *ngIf="currentTools.indexOf(i) > -1">
+                  <mat-icon style="color:royalblue">label</mat-icon>
+                  <span>No label associated with this note yet</span>
+              </div> -->
+               <!-- <i class="material-icons">create</i> -->
+            </button>
+          </div>
+        </div>
+
+        <div>
+        <button mat-menu-item  (click)="openLabelDialog()">
+          <mat-icon style="color:royalblue">add</mat-icon>
+          <span style="color:royalblue">Create new label</span>
+        </button>
+       </div>
+      
+    <!-- <div *ngIf="labels!=null">
+      <div *ngFor="let label of labels">
+        <div class="toolitems">
+          <button mat-menu-item style="color:royalblue"> 
+              <mat-icon style="color:royalblue">label</mat-icon>
+              <span>{{label.labelTitle}}</span> -->
+              <!-- <input name="labels" value="{{label.labelTitle}}"> -->
+              
+               <!-- <i class="material-icons">create</i> -->
+          <!-- </button>
+        </div> 
+       </div> 
+       </div> -->
+
+    </mat-sidenav>
+
+    <router-outlet></router-outlet>
+
+    <!-- <mat-sidenav-content style="margin-left: 212px;margin-right: 0px;background-image:Url(http://bangalorewebmaster.com/wp-content/uploads/2018/05/search-photos-g-clef-intended-for-colorful-music-note-transparent-background.jpg)">
+
+    </mat-sidenav-content> -->
+
+  </mat-sidenav-container>
+</div>

@@ -1,0 +1,16 @@
+<div class="class-container" fxLayoutAlign="center center">
+
+      <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px" style="margin-top:95px">
+             <div *ngFor="let note of notes |labelnote : id">
+               <!-- <div *ngIf="note.indexOf(i)>-1 " >
+                 <mat-icon>
+                   label
+                 </mat-icon>
+                 <span>No notes with this label yet</span>
+               </div> -->
+                <app-notedisplay [note]="note"></app-notedisplay>
+             
+             </div>
+      </div>
+    </div>
+    
